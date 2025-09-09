@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2 — Створення зображень в CSS-3</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 24px; }
+        h1 { margin: 0 0 16px; }
+        .wrapper { max-width: 1000px; margin: 0 auto; }
+        table.layout { width: 100%; border-collapse: collapse; table-layout: fixed; }
+        table.layout td { border: 2px solid #333; height: 80px; }
+
+        tr.row-1 { --bg: #098f8f; --text: #8F0909; background-color: var(--bg); transition: background-color 240ms ease; }
+        tr.row-1 td { height: 140px; text-align: center; font-size: 24px; font-weight: bold; color: var(--text); transition: color 240ms ease, background-color 240ms ease; }
+        tr.row-1:hover { background-color: var(--text); }
+        tr.row-1:hover td { color: var(--bg); }
+
+        tr.row-2 { --bg: #f5f509; --text: #0909F5; background-color: var(--bg); transition: background-color 240ms ease; }
+        tr.row-2 td { height: 110px; text-align: center; font-size: 24px; font-weight: bold; color: var(--text); transition: color 240ms ease, background-color 240ms ease; }
+        tr.row-2:hover { background-color: var(--text); }
+        tr.row-2:hover td { color: var(--bg); }
+        tr.row-3 td { height: 80px; }
+    </style>
+</head>
+<body>
+    <main class="wrapper">
+        <h1>Лабораторна робота 2 — Жмура Артем ІО-35</h1>
+        <h3>Завдання 1</h3>
+        <table class="layout" aria-label="Макет таблиці">
+            <tr class="row-1">
+                <td rowspan="2" colspan="2">Жмура Артем</td>
+                <td colspan="4">Анатолійович</td>
+            </tr>
+            <tr class="row-2">
+                <td colspan="2">ІО-35</td>
+                <td rowspan="2">Лабораторна робота 2</td>
+                <td rowspan="2">9 варіант</td>
+            </tr>
+            <tr class="row-3">
+                <td></td>
+                <td></td>
+                <td colspan="2"></td>
+            </tr>
+        </table>
+        <h3>Завдання 2</h3>
+        <div class="flag-jp" aria-label="Прапор Японії"></div>
+        <p><a href="../index.html">← Повернутись на головну</a></p>
+    </main>
+</body>
+</html>
+
