@@ -1,42 +1,45 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#94a3b8; --accent:#22d3ee; }
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #0b1220, #0f172a);
+    color: var(--text);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    display: grid;
+    place-items: center;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.container {
+    width: min(900px, 92vw);
+    text-align: center;
+    padding: 48px 28px;
+    background: rgba(17, 24, 39, 0.55);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 18px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+h1 { margin: 0 0 8px; font-size: 32px; letter-spacing: 0.3px; }
+p.lead { margin: 0 0 28px; color: var(--muted); }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 8px;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+@media (min-width: 700px) {
+    .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a.card {
+    display: block;
+    padding: 16px 14px;
+    background: rgba(2,6,23,0.4);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 12px;
+    color: var(--text);
+    text-decoration: none;
+    transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+a.card:hover { transform: translateY(-2px); background: rgba(2,6,23,0.55); border-color: rgba(148,163,184,0.35); }
+.card small { color: var(--muted); display: block; margin-top: 6px; }
+footer { margin-top: 24px; color: var(--muted); font-size: 14px; }
