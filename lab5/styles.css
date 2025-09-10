@@ -1,0 +1,234 @@
+:root {
+    --bg: #0f1115;
+    --card: #12151b;
+    --muted: #8b95a7;
+    --text: #e6eaf2;
+    --accent: #4f7cff;
+    --ok: #25c08a;
+    --danger: #ff5a5f;
+    --border: #1e2330
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+    background: var(--bg);
+    color: var(--text)
+}
+
+.wrapper {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 32px 20px
+}
+
+h1 {
+    font-weight: 700;
+    letter-spacing: .2px;
+    margin: 0 0 16px
+}
+
+.back-link {
+    margin-top: 24px
+}
+
+.back-link a {
+    color: var(--muted);
+    text-decoration: none
+}
+
+.back-link a:hover {
+    text-decoration: underline
+}
+
+.lab5-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 20px;
+    align-items: start
+}
+
+@media (max-width: 880px) {
+    .lab5-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 18px 16px
+}
+
+.card__title {
+    font-size: 18px;
+    margin: 4px 0 12px;
+    color: #fff
+}
+
+form {
+    margin-top: 8px
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px
+}
+
+label {
+    font-size: 13px;
+    color: var(--muted)
+}
+
+input[type="text"] {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 10px 12px;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+input[type="text"]:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(79, 124, 255, .15)
+}
+
+input[type="text"].invalid {
+    border-color: var(--danger);
+    box-shadow: 0 0 0 3px rgba(255, 90, 95, .12)
+}
+
+small.error {
+    min-height: 16px;
+    color: var(--danger);
+    font-size: 12px
+}
+
+.form__actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px
+}
+
+.btn {
+    appearance: none;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s, border-color .2s, transform .06s
+}
+
+.btn:active {
+    transform: translateY(1px)
+}
+
+.btn--primary {
+    background: var(--accent);
+    border-color: transparent
+}
+
+.btn--ghost {
+    background: transparent
+}
+
+.card--result {
+    position: sticky;
+    top: 16px
+}
+
+.result__status {
+    padding: 10px 12px;
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+    color: var(--muted);
+    margin-bottom: 10px
+}
+
+.result__status.ok {
+    border-color: rgba(37, 192, 138, .4);
+    color: #baf2df;
+    background: rgba(37, 192, 138, .06)
+}
+
+.result__status.fail {
+    border-color: rgba(255, 90, 95, .5);
+    color: #ffd6d7;
+    background: rgba(255, 90, 95, .06)
+}
+
+.result__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 9px
+}
+
+.result__list li {
+    padding: 8px 10px;
+    background: #0f1218;
+    border: 1px solid var(--border);
+    border-radius: 10px
+}
+
+/* Task 2 grid */
+.task2{margin-top:18px}
+.color-picker-container{
+    margin-bottom:16px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+.color-picker-label{
+    font-size:13px;
+    color:var(--muted);
+    font-weight:500;
+}
+.color-picker{
+    width:48px;
+    height:36px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    background:transparent;
+    cursor:pointer;
+    outline:none;
+}
+.color-picker:hover{
+    border-color:var(--accent);
+}
+.grid6x6{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    gap:10px;
+}
+.grid6x6 .cell{
+    background:#0f1218;
+    border:1px solid var(--border);
+    border-radius:10px;
+    min-height:56px;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;color:#e9eef7;
+    cursor:pointer;
+    transition:transform 0.2s ease;
+}
+.grid6x6 .cell:hover{
+    transform:scale(1.05);
+}

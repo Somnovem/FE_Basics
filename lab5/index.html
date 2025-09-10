@@ -3,14 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 5</title>
+    <title>Lab 5 — Події і регулярні вирази у JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main>
-        <h1>Lab 5</h1>
-        <p>Placeholder page for Lab 5.</p>
-        <p><a href="../index.html">← Back to main</a></p>
+    <main class="wrapper">
+        <h1>Лабораторна робота 5 — Жмура Артем ІО-35</h1>
+        <h3>Завдання 1</h3>
+        <section class="lab5-grid">
+            <div class="card">
+                <h2 class="card__title">Мінімалістична форма</h2>
+                <form id="student-form" novalidate>
+                    <div class="form__group">
+                        <label for="fullName">ПІБ</label>
+                        <input id="fullName" name="fullName" type="text" placeholder="Жмура А.А." autocomplete="off" />
+                        <small class="error" id="fullNameError"></small>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="variant">Варіант</label>
+                        <input id="variant" name="variant" type="text" placeholder="12" autocomplete="off" />
+                        <small class="error" id="variantError"></small>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="group">Група</label>
+                        <input id="group" name="group" type="text" placeholder="ІО-35" autocomplete="off" />
+                        <small class="error" id="groupError"></small>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="faculty">Факультет</label>
+                        <input id="faculty" name="faculty" type="text" placeholder="ФІОТ" autocomplete="off" />
+                        <small class="error" id="facultyError"></small>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="dob">Дата народження</label>
+                        <input id="dob" name="dob" type="text" placeholder="03.08.2006" autocomplete="off" />
+                        <small class="error" id="dobError"></small>
+                    </div>
+
+                    <div class="form__actions">
+                        <button type="submit" class="btn btn--primary">Перевірити</button>
+                        <button type="reset" class="btn btn--ghost" id="resetBtn">Очистити</button>
+                    </div>
+                </form>
+            </div>
+
+            <aside class="card card--result" id="resultPanel" aria-live="polite">
+                <h2 class="card__title">Результат перевірки</h2>
+                <div class="result__status" id="resultStatus">Заповніть форму та натисніть «Перевірити»</div>
+                <ul class="result__list" id="resultList" hidden>
+                    <li><strong>ПІБ:</strong> <span id="rFullName"></span></li>
+                    <li><strong>Варіант:</strong> <span id="rVariant"></span></li>
+                    <li><strong>Група:</strong> <span id="rGroup"></span></li>
+                    <li><strong>Факультет:</strong> <span id="rFaculty"></span></li>
+                    <li><strong>Дата народження:</strong> <span id="rDob"></span></li>
+                </ul>
+            </aside>
+        </section>
+        <h3>Завдання 2</h3>
+        <section class="task2">
+            <div class="card">
+                <h2 class="card__title">Сітка 6×6 (1–36)</h2>
+                <div class="color-picker-container">
+                    <label for="colorPicker" class="color-picker-label">Оберіть колір для клітинки 9:</label>
+                    <input type="color" id="colorPicker" class="color-picker" value="#4f7cff">
+                </div>
+                <div id="grid6x6" class="grid6x6" aria-label="Сітка чисел від 1 до 36"></div>
+            </div>
+        </section>
+        
+        <p class="back-link"><a href="../index.html">← Повернутись на головну</a></p>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
 
